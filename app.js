@@ -277,7 +277,7 @@ nextStep4.addEventListener("click", () => {
         FirstLanguagePercent: FirstLanguagePercent.value,
 
         SecondLanguage: SecondLanguage.value,
-        SecondLanguagePercent:SecondLanguagePercent.value,
+        SecondLanguagePercent: SecondLanguagePercent.value,
 
         ThirdLanguage: ThirdLanguage.value,
         ThirdLanguagePercent: ThirdLanguagePercent.value,
@@ -325,6 +325,107 @@ nextStep4.addEventListener("click", () => {
 
     localStorage.setItem("users", JSON.stringify(users))
 
+    firstName.value = "";
+    lastName.value = "";
+    upload_image = "";
+    email.value = "";
+    post.value = "";
+    phone.value = "";
+    address.value = "";
+    profileUrl.value = "";
+    linkedinUrl.value = "";
+    objectives.value = "";
+
+    firstYearStart.value = "";
+    firstYearEnd.value = "";
+    UniversityName.value = "";
+    bechlorDegree.value = "";
+
+    secondYearStart.value = "";
+    secondYearEnd.value = "";
+    collegeName.value = "";
+    InterDegree.value = "";
+
+    thirdYearStart.value = "";
+    thirdYearEnd.value = "";
+    schoolName.value = "";
+    MatricDegree.value = "";
+
+    StartYear1.value = "";
+    StartYear2.value = "";
+    jobPost1.value = "";
+    fisrtCompany.value = "";
+    Description1.value = "";
+
+    StartYear3.value = "";
+    StartYear4.value = "";
+    jobPost2.value = "";
+    secondCompany.value = "";
+    Description2.value = "";
+
+    StartYear5.value
+    StartYear6.value = "";
+    jobPost3.value = "";
+    thirdCompany.value = "";
+    Description3.value = "";
+
+    StartYear7.value = "";
+    StartYear8.value = "";
+    jobPost4.value = "";
+    forthCompany.value = "";
+    Description4.value = "";
+
+    StartYear9.value = "";
+    StartYear0.value = "";
+    jobPost5.value = "";
+    fifthCompany.value = "";
+    Description5.value = "";
+
+    FirstLanguage.value = "";
+    FirstLanguagePercent.value = "";
+
+    SecondLanguage.value = "";
+    SecondLanguagePercent.value = "";
+
+    ThirdLanguage.value = "";
+    ThirdLanguagePercent.value = "";
+
+    ForthLanguage.value = "";
+    ForthLanguagePercent.value = "";
+
+    FirstSkill.value = "";
+    FirstSkillPercent.value = "";
+
+    SecondSkill.value = "";
+    SecondSkillPercent.value = "";
+
+    ThirdSkill.value = "";
+    ThirdSkillPercent.value = "";
+
+    ForthSkill.value = "";
+    ForthSkillPercent.value,
+
+        FifthSkill.value = "";
+    FifthSkillPercent.value = "";
+
+    SixthSkill.value = "";
+    SixthSkillPercent.value = "";
+
+    SeventhSkill.value = "";
+    SeventhSkillPercent.value = "";
+
+    EightSkill.value = "";
+    EightSkillPercent.value = "";
+
+    first_hobby.value = "";
+    second_hobby.value = "";
+    third_hobby.value = "";
+    forth_hobby.value = "";
+
+    first_certification.value = "";
+    second_certification.value = "";
+    third_certification.value = "";
+    forth_certification.value = "";
 
     formContaierBox.style.display = "none"
     successBox.style.display = "flex";
