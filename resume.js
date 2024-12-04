@@ -356,12 +356,15 @@ function getData() {
     /////////////////////////////////////// certification data ///////////////////////////////
 
     if(
-        saveUsers.first_certification == undefined  || saveUsers.first_certification == ""
-        && saveUsers.second_certification == undefined  || saveUsers.second_certification == "" 
-        && saveUsers.third_certification == undefined  || saveUsers.third_certification == "" 
-        && saveUsers.forth_certification == undefined || saveUsers.forth_certification == "" 
+        saveUsers.first_certification !== undefined  || saveUsers.first_certification !== ""
+        && saveUsers.second_certification !== undefined  || saveUsers.second_certification !== "" 
+        && saveUsers.third_certification !== undefined  || saveUsers.third_certification !== "" 
+        && saveUsers.forth_certification !== undefined || saveUsers.forth_certification !== "" 
     ){
-        certifications.style.display = "none"
+        certifications.style.display = "block"
+    }
+    else{
+        certifications.style.display ="none"
     }
 
 
