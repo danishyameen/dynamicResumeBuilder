@@ -311,13 +311,17 @@ function getData() {
     /////////////////////////////////////// hobby data ///////////////////////////////
 
     if(
-        saveUsers.first_hobby == undefined || saveUsers.first_hobby == ""
-        && saveUsers.second_hobby == undefined || saveUsers.second_hobby == ""
-        && saveUsers.third_hobby == undefined || saveUsers.third_hobby == "" 
-        && saveUsers.forth_hobby == undefined || saveUsers.forth_hobby == "" 
+        saveUsers.first_hobby !== undefined || saveUsers.first_hobby !== ""
+        && saveUsers.second_hobby !== undefined || saveUsers.second_hobby !== ""
+        && saveUsers.third_hobby !== undefined || saveUsers.third_hobby == !"" 
+        && saveUsers.forth_hobby !== undefined || saveUsers.forth_hobby == !"" 
     ){
+        interests.style.display = "block"
+    }
+    else {
         interests.style.display = "none"
     }
+    
 
     if (saveUsers.first_hobby == undefined || saveUsers.first_hobby == "") {
         first_interest.style.display = "none"

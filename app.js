@@ -168,21 +168,109 @@ form.addEventListener("submit", (e) => {
 })
 
 nextStep1.addEventListener("click", () => {
-    stepGroup1.style.display = "none";
-    stepGroup2.style.display = "block";
-    step2.classList.add("active")
+    if (firstName.value == "") {
+        alert("Enter First Name...")
+        firstName.style.border = "1px solid red"
+    }
+    else if(lastName.value == ""){
+        lastName.style.border = "1px solid red"
+        alert("Enter Last Name...")
+    } 
+    else if(upload_image == " "){
+        alert("Select Your Image ...")
+        profileImage.style.border = "1px solid red"
+    }
+    else if(email.value == ""){
+        alert("Enter Your Email ...")
+        email.style.border = "1px solid red"
+    }
+    else if(phone.value == ""){
+        alert("Select Your Phone Number ...")
+        phone.style.border = "1px solid red"
+    }
+    else if(address.value == ""){
+        alert("Enter Your Address ...")
+        address.style.border = "1px solid red"
+    }
+    else if(objectives.value == ""){
+        alert("Shortly Details About Your Self ...")
+        objectives.style.border = "1px solid red"
+    }
+    else {
+        stepGroup1.style.display = "none";
+        stepGroup2.style.display = "block";
+        step2.classList.add("active")
+        firstName.style.border = "1px solid #fff"
+        lastName.style.border = "1px solid #fff"
+        email.style.border = "1px solid #fff"
+        phone.style.border = "1px solid #fff"
+        address.style.border = "1px solid #fff"
+        objectives.style.border = "1px solid #fff"
+    }
+
 })
 
 nextStep2.addEventListener("click", () => {
-    stepGroup2.style.display = "none";
-    stepGroup3.style.display = "block";
-    step3.classList.add("active");
+    if(thirdYearStart.value == ""){
+        alert("Enter Start Year of Matric Education ...")
+        thirdYearStart.style.border = "1px solid red"
+    }else if(thirdYearEnd.value == ""){
+        alert("Enter End Year of Matric Education ...")
+        thirdYearEnd.style.border = "1px solid red"
+    }
+    else if(schoolName.value == ""){
+        alert("Enter Boaed OR Institute Name...")
+        schoolName.style.border = "1px solid red"
+    }
+    else if(MatricDegree.value == ""){
+        alert("Enter Matric Degree Name...")
+        MatricDegree.style.border = "1px solid red"
+    }
+    else{
+        stepGroup2.style.display = "none";
+        stepGroup3.style.display = "block";
+        step3.classList.add("active");
+        thirdYearStart.style.border = "1px solid #fff"
+        thirdYearEnd.style.border = "1px solid #fff"
+        schoolName.style.border = "1px solid #fff"
+        MatricDegree.style.border = "1px solid #fff"
+        
+    }
 })
 
 nextStep3.addEventListener("click", () => {
-    stepGroup3.style.display = "none";
-    stepGroup4.style.display = "block";
-    step4.classList.add("active");
+    if(StartYear1.value == ""){
+        alert("Enter Start Year of Work...")
+        StartYear1.style.border = "1px solid red"
+
+    }
+    else if(StartYear2.value == ""){
+        alert("Enter End Year of Work ...")
+        StartYear2.style.border = "1px solid red"
+    }
+    else if(jobPost1.value == ""){
+        alert("Enter End Year of Work ...")
+        jobPost1.style.border = "1px solid red"
+    }
+    else if(fisrtCompany.value == ""){
+        alert("Enter Company / Orgaization Name Where You Work ...")
+        fisrtCompany.style.border = "1px solid red"
+    }
+    else if(Description1.value == ""){
+        alert("Shortly Details About Your Work ...")
+        Description1.style.border = "1px solid red"
+    }
+    else{
+        stepGroup3.style.display = "none";
+        stepGroup4.style.display = "block";
+        step4.classList.add("active");
+        StartYear1.style.border = "1px solid #fff"
+        StartYear2.style.border = "1px solid #fff"
+        jobPost1.style.border = "1px solid #fff"
+        fisrtCompany.style.border = "1px solid #fff"
+        Description1.style.border = "1px solid #fff"
+    }
+   
 })
 
 
@@ -206,229 +294,264 @@ prevStep3.addEventListener("click", () => {
 })
 
 nextStep4.addEventListener("click", () => {
-    let users = localStorage.getItem("users");
-
-    if (users) {
-        users = JSON.parse(users)
-    } else {
-        users = [];
+    if(FirstLanguage.value == ""){
+       alert("Enter Your Language Name ...")
+       FirstLanguage.style.border = "1px solid red"
     }
-
-
-    let user = {
-
-        firstName: firstName.value,
-        lastName: lastName.value,
-        profileImage: upload_image,
-        email: email.value,
-        post: post.value,
-        phone: phone.value,
-        address: address.value,
-        profileUrl: profileUrl.value,
-        linkedinUrl: linkedinUrl.value,
-        objectives: objectives.value,
-
-        firstYearStart: firstYearStart.value,
-        firstYearEnd: firstYearEnd.value,
-        UniversityName: UniversityName.value,
-        bechlorDegree: bechlorDegree.value,
-
-        secondYearStart: secondYearStart.value,
-        secondYearEnd: secondYearEnd.value,
-        collegeName: collegeName.value,
-        InterDegree: InterDegree.value,
-
-        thirdYearStart: thirdYearStart.value,
-        thirdYearEnd: thirdYearEnd.value,
-        schoolName: schoolName.value,
-        MatricDegree: MatricDegree.value,
-
-        StartYear1: StartYear1.value,
-        StartYear2: StartYear2.value,
-        jobPost1: jobPost1.value,
-        fisrtCompany: fisrtCompany.value,
-        Description1: Description1.value,
-
-        StartYear3: StartYear3.value,
-        StartYear4: StartYear4.value,
-        jobPost2: jobPost2.value,
-        secondCompany: secondCompany.value,
-        Description2: Description2.value,
-
-        StartYear5: StartYear5.value,
-        StartYear6: StartYear6.value,
-        jobPost3: jobPost3.value,
-        thirdCompany: thirdCompany.value,
-        Description3: Description3.value,
-
-        StartYear7: StartYear7.value,
-        StartYear8: StartYear8.value,
-        jobPost4: jobPost4.value,
-        forthCompany: forthCompany.value,
-        Description4: Description4.value,
-
-        StartYear9: StartYear9.value,
-        StartYear0: StartYear0.value,
-        jobPost5: jobPost5.value,
-        fifthCompany: fifthCompany.value,
-        Description5: Description5.value,
-
-        FirstLanguage: FirstLanguage.value,
-        FirstLanguagePercent: FirstLanguagePercent.value,
-
-        SecondLanguage: SecondLanguage.value,
-        SecondLanguagePercent: SecondLanguagePercent.value,
-
-        ThirdLanguage: ThirdLanguage.value,
-        ThirdLanguagePercent: ThirdLanguagePercent.value,
-
-        ForthLanguage: ForthLanguage.value,
-        ForthLanguagePercent: ForthLanguagePercent.value,
-
-        FirstSkill: FirstSkill.value,
-        FirstSkillPercent: FirstSkillPercent.value,
-
-        SecondSkill: SecondSkill.value,
-        SecondSkillPercent: SecondSkillPercent.value,
-
-        ThirdSkill: ThirdSkill.value,
-        ThirdSkillPercent: ThirdSkillPercent.value,
-
-        ForthSkill: ForthSkill.value,
-        ForthSkillPercent: ForthSkillPercent.value,
-
-        FifthSkill: FifthSkill.value,
-        FifthSkillPercent: FifthSkillPercent.value,
-
-        SixthSkill: SixthSkill.value,
-        SixthSkillPercent: SixthSkillPercent.value,
-
-        SeventhSkill: SeventhSkill.value,
-        SeventhSkillPercent: SeventhSkillPercent.value,
-
-        EightSkill: EightSkill.value,
-        EightSkillPercent: EightSkillPercent.value,
-
-        first_hobby: first_hobby.value,
-        second_hobby: second_hobby.value,
-        third_hobby: third_hobby.value,
-        forth_hobby: forth_hobby.value,
-
-        first_certification: first_certification.value,
-        second_certification: second_certification.value,
-        third_certification: third_certification.value,
-        forth_certification: forth_certification.value,
-
+    else if(FirstLanguagePercent.value == ""){
+        alert("Enter Your Language Percentage Into 2 or 3 digit number ...")
+       FirstLanguage.style.border = "1px solid red"
     }
+    else if(FirstSkill.value == ""){
+        alert("Enter Your Skill Name ...")
+        FirstSkill.style.border = "1px solid red"
+    }
+    else if(FirstSkillPercent.value == ""){
+        alert("Enter Your Language Percentage Into 2 or 3 digit number ...")
+        FirstSkillPercent.style.border = "1px solid red"
+    }
+    else if(SecondSkill.value == ""){
+        alert("Enter Your Skill Name ...")
+        SecondSkill.style.border = "1px solid red"
+    }
+    else if(SecondSkillPercent.value == ""){
+        alert("Enter Your Language Percentage Into 2 or 3 digit number ...")
+        SecondSkillPercent.style.border = "1px solid red"
+    }
+    else{
 
-    users.push(user)
+        FirstLanguage.style.border = "1px solid #fff"
+        FirstSkill.style.border = "1px solid #fff"
+        SecondSkill.style.border = "1px solid #fff"
+        FirstSkillPercent.style.border = "1px solid #fff"
+        SecondSkillPercent.style.border = "1px solid #fff"
 
-    localStorage.setItem("users", JSON.stringify(users))
-
-    firstName.value = "";
-    lastName.value = "";
-    upload_image = "";
-    email.value = "";
-    post.value = "";
-    phone.value = "";
-    address.value = "";
-    profileUrl.value = "";
-    linkedinUrl.value = "";
-    objectives.value = "";
-
-    firstYearStart.value = "";
-    firstYearEnd.value = "";
-    UniversityName.value = "";
-    bechlorDegree.value = "";
-
-    secondYearStart.value = "";
-    secondYearEnd.value = "";
-    collegeName.value = "";
-    InterDegree.value = "";
-
-    thirdYearStart.value = "";
-    thirdYearEnd.value = "";
-    schoolName.value = "";
-    MatricDegree.value = "";
-
-    StartYear1.value = "";
-    StartYear2.value = "";
-    jobPost1.value = "";
-    fisrtCompany.value = "";
-    Description1.value = "";
-
-    StartYear3.value = "";
-    StartYear4.value = "";
-    jobPost2.value = "";
-    secondCompany.value = "";
-    Description2.value = "";
-
-    StartYear5.value
-    StartYear6.value = "";
-    jobPost3.value = "";
-    thirdCompany.value = "";
-    Description3.value = "";
-
-    StartYear7.value = "";
-    StartYear8.value = "";
-    jobPost4.value = "";
-    forthCompany.value = "";
-    Description4.value = "";
-
-    StartYear9.value = "";
-    StartYear0.value = "";
-    jobPost5.value = "";
-    fifthCompany.value = "";
-    Description5.value = "";
-
-    FirstLanguage.value = "";
-    FirstLanguagePercent.value = "";
-
-    SecondLanguage.value = "";
-    SecondLanguagePercent.value = "";
-
-    ThirdLanguage.value = "";
-    ThirdLanguagePercent.value = "";
-
-    ForthLanguage.value = "";
-    ForthLanguagePercent.value = "";
-
-    FirstSkill.value = "";
-    FirstSkillPercent.value = "";
-
-    SecondSkill.value = "";
-    SecondSkillPercent.value = "";
-
-    ThirdSkill.value = "";
-    ThirdSkillPercent.value = "";
-
-    ForthSkill.value = "";
-    ForthSkillPercent.value,
-
-        FifthSkill.value = "";
-    FifthSkillPercent.value = "";
-
-    SixthSkill.value = "";
-    SixthSkillPercent.value = "";
-
-    SeventhSkill.value = "";
-    SeventhSkillPercent.value = "";
-
-    EightSkill.value = "";
-    EightSkillPercent.value = "";
-
-    first_hobby.value = "";
-    second_hobby.value = "";
-    third_hobby.value = "";
-    forth_hobby.value = "";
-
-    first_certification.value = "";
-    second_certification.value = "";
-    third_certification.value = "";
-    forth_certification.value = "";
-
-    formContaierBox.style.display = "none"
-    successBox.style.display = "flex";
+        
+        let users = localStorage.getItem("users");
+    
+        if (users) {
+            users = JSON.parse(users)
+        } else {
+            users = [];
+        }
+    
+    
+        let user = {
+    
+            firstName: firstName.value,
+            lastName: lastName.value,
+            profileImage: upload_image,
+            email: email.value,
+            post: post.value,
+            phone: phone.value,
+            address: address.value,
+            profileUrl: profileUrl.value,
+            linkedinUrl: linkedinUrl.value,
+            objectives: objectives.value,
+    
+            firstYearStart: firstYearStart.value,
+            firstYearEnd: firstYearEnd.value,
+            UniversityName: UniversityName.value,
+            bechlorDegree: bechlorDegree.value,
+    
+            secondYearStart: secondYearStart.value,
+            secondYearEnd: secondYearEnd.value,
+            collegeName: collegeName.value,
+            InterDegree: InterDegree.value,
+    
+            thirdYearStart: thirdYearStart.value,
+            thirdYearEnd: thirdYearEnd.value,
+            schoolName: schoolName.value,
+            MatricDegree: MatricDegree.value,
+    
+            StartYear1: StartYear1.value,
+            StartYear2: StartYear2.value,
+            jobPost1: jobPost1.value,
+            fisrtCompany: fisrtCompany.value,
+            Description1: Description1.value,
+    
+            StartYear3: StartYear3.value,
+            StartYear4: StartYear4.value,
+            jobPost2: jobPost2.value,
+            secondCompany: secondCompany.value,
+            Description2: Description2.value,
+    
+            StartYear5: StartYear5.value,
+            StartYear6: StartYear6.value,
+            jobPost3: jobPost3.value,
+            thirdCompany: thirdCompany.value,
+            Description3: Description3.value,
+    
+            StartYear7: StartYear7.value,
+            StartYear8: StartYear8.value,
+            jobPost4: jobPost4.value,
+            forthCompany: forthCompany.value,
+            Description4: Description4.value,
+    
+            StartYear9: StartYear9.value,
+            StartYear0: StartYear0.value,
+            jobPost5: jobPost5.value,
+            fifthCompany: fifthCompany.value,
+            Description5: Description5.value,
+    
+            FirstLanguage: FirstLanguage.value,
+            FirstLanguagePercent: FirstLanguagePercent.value,
+    
+            SecondLanguage: SecondLanguage.value,
+            SecondLanguagePercent: SecondLanguagePercent.value,
+    
+            ThirdLanguage: ThirdLanguage.value,
+            ThirdLanguagePercent: ThirdLanguagePercent.value,
+    
+            ForthLanguage: ForthLanguage.value,
+            ForthLanguagePercent: ForthLanguagePercent.value,
+    
+            FirstSkill: FirstSkill.value,
+            FirstSkillPercent: FirstSkillPercent.value,
+    
+            SecondSkill: SecondSkill.value,
+            SecondSkillPercent: SecondSkillPercent.value,
+    
+            ThirdSkill: ThirdSkill.value,
+            ThirdSkillPercent: ThirdSkillPercent.value,
+    
+            ForthSkill: ForthSkill.value,
+            ForthSkillPercent: ForthSkillPercent.value,
+    
+            FifthSkill: FifthSkill.value,
+            FifthSkillPercent: FifthSkillPercent.value,
+    
+            SixthSkill: SixthSkill.value,
+            SixthSkillPercent: SixthSkillPercent.value,
+    
+            SeventhSkill: SeventhSkill.value,
+            SeventhSkillPercent: SeventhSkillPercent.value,
+    
+            EightSkill: EightSkill.value,
+            EightSkillPercent: EightSkillPercent.value,
+    
+            first_hobby: first_hobby.value,
+            second_hobby: second_hobby.value,
+            third_hobby: third_hobby.value,
+            forth_hobby: forth_hobby.value,
+    
+            first_certification: first_certification.value,
+            second_certification: second_certification.value,
+            third_certification: third_certification.value,
+            forth_certification: forth_certification.value,
+    
+        }
+    
+        users.push(user)
+    
+        localStorage.setItem("users", JSON.stringify(users))
+    
+        firstName.value = "";
+        lastName.value = "";
+        profileImage.src = " ";
+        email.value = "";
+        post.value = "";
+        phone.value = "";
+        address.value = "";
+        profileUrl.value = "";
+        linkedinUrl.value = "";
+        objectives.value = "";
+    
+        firstYearStart.value = "";
+        firstYearEnd.value = "";
+        UniversityName.value = "";
+        bechlorDegree.value = "";
+    
+        secondYearStart.value = "";
+        secondYearEnd.value = "";
+        collegeName.value = "";
+        InterDegree.value = "";
+    
+        thirdYearStart.value = "";
+        thirdYearEnd.value = "";
+        schoolName.value = "";
+        MatricDegree.value = "";
+    
+        StartYear1.value = "";
+        StartYear2.value = "";
+        jobPost1.value = "";
+        fisrtCompany.value = "";
+        Description1.value = "";
+    
+        StartYear3.value = "";
+        StartYear4.value = "";
+        jobPost2.value = "";
+        secondCompany.value = "";
+        Description2.value = "";
+    
+        StartYear5.value
+        StartYear6.value = "";
+        jobPost3.value = "";
+        thirdCompany.value = "";
+        Description3.value = "";
+    
+        StartYear7.value = "";
+        StartYear8.value = "";
+        jobPost4.value = "";
+        forthCompany.value = "";
+        Description4.value = "";
+    
+        StartYear9.value = "";
+        StartYear0.value = "";
+        jobPost5.value = "";
+        fifthCompany.value = "";
+        Description5.value = "";
+    
+        FirstLanguage.value = "";
+        FirstLanguagePercent.value = "";
+    
+        SecondLanguage.value = "";
+        SecondLanguagePercent.value = "";
+    
+        ThirdLanguage.value = "";
+        ThirdLanguagePercent.value = "";
+    
+        ForthLanguage.value = "";
+        ForthLanguagePercent.value = "";
+    
+        FirstSkill.value = "";
+        FirstSkillPercent.value = "";
+    
+        SecondSkill.value = "";
+        SecondSkillPercent.value = "";
+    
+        ThirdSkill.value = "";
+        ThirdSkillPercent.value = "";
+    
+        ForthSkill.value = "";
+        ForthSkillPercent.value,
+    
+            FifthSkill.value = "";
+        FifthSkillPercent.value = "";
+    
+        SixthSkill.value = "";
+        SixthSkillPercent.value = "";
+    
+        SeventhSkill.value = "";
+        SeventhSkillPercent.value = "";
+    
+        EightSkill.value = "";
+        EightSkillPercent.value = "";
+    
+        first_hobby.value = "";
+        second_hobby.value = "";
+        third_hobby.value = "";
+        forth_hobby.value = "";
+    
+        first_certification.value = "";
+        second_certification.value = "";
+        third_certification.value = "";
+        forth_certification.value = "";
+    
+        formContaierBox.style.display = "none"
+        successBox.style.display = "flex";
+    }
+    
 
 
 })
