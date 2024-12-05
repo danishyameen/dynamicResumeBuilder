@@ -326,7 +326,7 @@ nextStep4.addEventListener("click", () => {
         FirstSkillPercent.style.border = "1px solid #fff"
         SecondSkillPercent.style.border = "1px solid #fff"
 
-        
+
         let users = localStorage.getItem("users");
     
         if (users) {
@@ -560,7 +560,7 @@ preview.addEventListener("click", () => {
 
     setTimeout(() => {
         if (true) {
-            console.log("data set at browser");
+
             window.location.href = "./resume.html"
         }
     }, 500);
