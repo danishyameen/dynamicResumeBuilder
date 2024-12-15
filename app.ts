@@ -1,4 +1,3 @@
-
 let form = document.getElementById("multi-step-form")! as HTMLFormElement;
 let formContaierBox = document.getElementById("form-contaier-box")! as HTMLDivElement;
 
