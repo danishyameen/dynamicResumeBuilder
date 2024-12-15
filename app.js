@@ -281,7 +281,7 @@ nextStep4.addEventListener("click", function () {
             profileImage: upload_image,
             email: email.value,
             post: post.value,
-            phone: phone.value,
+            phone: +phone.value,
             address: address.value,
             profileUrl: profileUrl.value,
             linkedinUrl: linkedinUrl.value,

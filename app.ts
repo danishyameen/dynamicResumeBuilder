@@ -328,7 +328,7 @@ nextStep4.addEventListener("click", () => {
         SecondSkillPercent.style.border = "1px solid #fff"
 
 
-        let users:any = localStorage.getItem("users");
+        let users: any = localStorage.getItem("users");
     
         if (users) {
             users = JSON.parse(users)
@@ -336,15 +336,120 @@ nextStep4.addEventListener("click", () => {
             users = [];
         }
     
+     type User = {
+            firstName: string;
+            lastName: string;
+            profileImage: any;
+            email: string;
+            post: string;
+            phone: number;
+            address: string;
+            profileUrl: string;
+            linkedinUrl: string;
+            objectives: string;
+            
+            firstYearStart:string;
+            firstYearEnd: string;
+            UniversityName: string;
+            bechlorDegree: string;
+            
+            secondYearStart: string,
+            secondYearEnd: string,
+            collegeName: string,
+            InterDegree: string,
     
-        let user = {
+            thirdYearStart: string,
+            thirdYearEnd: string,
+            schoolName: string,
+            MatricDegree: string,
+
+            StartYear1: string,
+            StartYear2: string,
+            jobPost1: string,
+            fisrtCompany: string,
+            Description1: string,
+            
+            StartYear3: string,
+            StartYear4: string,
+            jobPost2: string,
+            secondCompany: string,
+            Description2: string,
+    
+            StartYear5: string,
+            StartYear6: string,
+            jobPost3: string,
+            thirdCompany: string,
+            Description3: string,
+    
+            StartYear7: string,
+            StartYear8: string,
+            jobPost4: string,
+            forthCompany: string,
+            Description4: string,
+    
+            StartYear9: string,
+            StartYear0: string,
+            jobPost5: string,
+            fifthCompany: string,
+            Description5: string,
+    
+            FirstLanguage: string,
+            FirstLanguagePercent: string,
+    
+            SecondLanguage: string,
+            SecondLanguagePercent: string,
+    
+            ThirdLanguage: string,
+            ThirdLanguagePercent: string,
+    
+            ForthLanguage: string,
+            ForthLanguagePercent: string,
+    
+            FirstSkill: string,
+            FirstSkillPercent: string,
+    
+            SecondSkill: string,
+            SecondSkillPercent: string,
+    
+            ThirdSkill: string,
+            ThirdSkillPercent: string,
+    
+            ForthSkill: string,
+            ForthSkillPercent: string,
+    
+            FifthSkill: string,
+            FifthSkillPercent: string,
+    
+            SixthSkill: string,
+            SixthSkillPercent: string,
+    
+            SeventhSkill: string,
+            SeventhSkillPercent: string,
+    
+            EightSkill: string,
+            EightSkillPercent: string,
+    
+            first_hobby: string,
+            second_hobby: string,
+            third_hobby: string,
+            forth_hobby: string,
+    
+            first_certification: string,
+            second_certification: string,
+            third_certification: string,
+            forth_certification: string,
+        
+    
+    }
+
+        let user:User = {
     
             firstName: firstName.value,
             lastName: lastName.value,
             profileImage: upload_image,
             email: email.value,
             post: post.value,
-            phone: phone.value,
+            phone: +phone.value,
             address: address.value,
             profileUrl: profileUrl.value,
             linkedinUrl: linkedinUrl.value,
